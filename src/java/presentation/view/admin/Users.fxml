@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="768.0" minWidth="1024.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.users.UserMainController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Logout" />
+                  <MenuItem mnemonicParsing="false" text="Esci" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Impostazioni">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Cambia password" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane VBox.vgrow="ALWAYS">
+         <children>
+            <BorderPane layoutY="-14.0" prefHeight="200.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <ToolBar BorderPane.alignment="CENTER">
+                     <items>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/users.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utenti" wrappingWidth="100.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="728.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoDashboard" text="Torna al menu" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/undo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#openAddUser" text="Aggiungi" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/add_user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="168.0" layoutY="10.0" mnemonicParsing="false" onAction="#openEditUser" text="Modifica" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/edit_user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteCurrentUser" text="Rimuovi" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/delete_user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" onAction="#blockCurrentUser" text="Blocca" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/lock.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="378.0" layoutY="10.0" mnemonicParsing="false" onAction="#unlockCurrentUser" text="Sblocca" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/unlock.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="448.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeCurrentUserPassword" text="Cambia password" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/change_password.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </items>
+                  </ToolBar>
+               </top>
+               <right>
+                  <AnchorPane prefHeight="644.0" prefWidth="218.0">
+                     <children>
+                        <VBox layoutX="-62.0" prefHeight="624.0" prefWidth="172.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TextField fx:id="name_filter" promptText="Nome" />
+                              <TextField fx:id="surname_filter" promptText="Cognome">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="username_filter" promptText="Nome utente" />
+                              <TextField fx:id="agency_code_filter" promptText="Codice agenzia" />
+                              <ComboBox fx:id="account_type_filter" prefHeight="25.0" prefWidth="202.0" />
+                              <Button fx:id="clear" mnemonicParsing="false" onAction="#resetFilters" prefHeight="25.0" prefWidth="203.0" text="Rimuovi filtri" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="162.0" prefWidth="198.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Informazioni agenzia">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="city_label" />
+                              <Label fx:id="address_label" />
+                              <Label fx:id="tel_label" />
+                              <Label fx:id="fax_label" />
+                              <Label fx:id="email_label" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </right>
+               <center>
+                  <AnchorPane prefHeight="644.0" prefWidth="855.0">
+                     <children>
+                        <TableView fx:id="table" prefHeight="644.0" prefWidth="806.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="name_column" editable="false" maxWidth="300.0" minWidth="120.0" prefWidth="150.0" text="Nome" />
+                              <TableColumn fx:id="surname_column" editable="false" maxWidth="300.0" minWidth="120.0" prefWidth="150.0" text="Cognome" />
+                              <TableColumn fx:id="username_column" editable="false" maxWidth="250.0" minWidth="120.0" prefWidth="150.0" text="Nome utente" />
+                              <TableColumn fx:id="account_type_column" editable="false" maxWidth="110.0" minWidth="100.0" prefWidth="110.0" resizable="false" text="Tipo account" />
+                              <TableColumn fx:id="agency_code_column" editable="false" maxWidth="120.0" minWidth="100.0" prefWidth="120.0" resizable="false" text="Codice agenzia" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox fx:id="spinnerBox" alignment="CENTER" prefHeight="628.0" prefWidth="806.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ProgressIndicator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <bottom>
+                  <HBox prefHeight="30.0" style="-fx-background-color: f0f0f0;" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

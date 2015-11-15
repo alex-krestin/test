@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="768.0" minWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.DashboardController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Logout" />
+              <MenuItem mnemonicParsing="false" text="Esci" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Impostazioni">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Cambia password" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane VBox.vgrow="ALWAYS">
+         <children>
+            <BorderPane layoutY="-14.0" prefHeight="200.0" prefWidth="600.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <ToolBar BorderPane.alignment="CENTER">
+                     <items>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" wrappingWidth="100.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Contratti" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/booking.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="168.0" layoutY="10.0" mnemonicParsing="false" text="Cassa" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/banknotes.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoClients" text="Clienti" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/clients.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoCars" text="Auto" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/garage.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="378.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoAccessories" text="Accessori" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/accessories.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="448.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoServices" text="Servizi" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/services.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="518.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoPenalties" text="Multe" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/law.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="518.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoUsers" text="Utenti" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="588.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotoAgencies" text="Agenzie" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/department.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="658.0" layoutY="10.0" mnemonicParsing="false" text="Tariffe" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/tariffs.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="728.0" layoutY="10.0" mnemonicParsing="false" text="Impostazioni" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/settings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </items>
+                  </ToolBar>
+               </top>
+               <center>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DASHBOARD" BorderPane.alignment="CENTER" />
+               </center></BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

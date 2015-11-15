@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox prefHeight="360.0" prefWidth="440.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.FirstAccountController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="325.0" prefWidth="440.0">
+         <children>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <HBox prefHeight="41.0" prefWidth="200.0">
+                     <children>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/keys.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="Crea il primo account">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Compila i campi per creare l'account di amministratore" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <GridPane focusTraversable="true" prefWidth="440.0">
+                     <children>
+                        <Label fx:id="fx_name_label" text="Nome" />
+                        <TextField fx:id="fx_name" GridPane.columnIndex="1" />
+                        <Label fx:id="fx_surname_label" text="Cognome" GridPane.rowIndex="1" />
+                        <TextField fx:id="fx_surname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="fx_username_label" text="Nome utente" GridPane.rowIndex="2" />
+                        <TextField fx:id="fx_username" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <tooltip>
+                              <Tooltip opacity="0.8" text="Da 3 a 15 caratteri alfanumerici&#10;compresi punto, tratino e underscore.&#10;Può iniziare solo da una lettera o un numero." wrapText="true" />
+                           </tooltip>
+                        </TextField>
+                        <Label fx:id="fx_password_label" text="Password" GridPane.rowIndex="3" />
+                        <PasswordField fx:id="fx_password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <tooltip>
+                              <Tooltip consumeAutoHidingEvents="false" opacity="0.8" text="Deve essere di minimo 8 caratteri &#10;e  contenere almeno :&#10;* una lettera minuscola, &#10;* una lettera Maiuscola,&#10;* un numero o carattere speciale" wrapText="true" />
+                           </tooltip>
+                        </PasswordField>
+                        <Label fx:id="fx_repeat_password_label" text="Conferma password" GridPane.rowIndex="4" />
+                        <PasswordField fx:id="fx_repeat_password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="fx_error_message" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <ImageView fx:id="fx_name_validation" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="fx_surname_validation" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="fx_username_validation" fitHeight="20.0" fitWidth="20.0" layoutX="465.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="fx_password_validation" fitHeight="20.0" fitWidth="20.0" layoutX="465.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="fx_repeat_password_validation" fitHeight="20.0" fitWidth="20.0" layoutX="465.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="261.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="12.0" prefWidth="30.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="440.0" spacing="10.0" style="-fx-background-color: f0f0f0;">
+         <children>
+            <Button layoutX="270.0" layoutY="20.0" mnemonicParsing="false" onAction="#previousView" prefWidth="80.0" text="Indietro" />
+            <Button fx:id="next_btn" disable="true" layoutX="360.0" layoutY="20.0" mnemonicParsing="false" onAction="#nextView" prefWidth="80.0" text="Avanti" />
+            <Button fx:id="exit_btn" mnemonicParsing="false" onAction="#exit" prefWidth="80.0" text="Esci">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
