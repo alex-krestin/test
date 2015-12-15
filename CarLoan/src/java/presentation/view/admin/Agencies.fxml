@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="768.0" minWidth="1024.0" stylesheets="@../style.css"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="presentation.controller.agencies.AgencyMainController">
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Logout"/>
+            <MenuItem mnemonicParsing="false" text="Esci"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Impostazioni">
+            <MenuItem mnemonicParsing="false" text="Cambia password"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <BorderPane layoutY="-14.0" prefHeight="200.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <right>
+                <AnchorPane prefHeight="644.0" prefWidth="218.0">
+                    <VBox layoutX="-62.0" prefHeight="624.0" prefWidth="172.0" spacing="10.0"
+                          AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                          AnchorPane.topAnchor="10.0" BorderPane.alignment="CENTER">
+                        <TextField fx:id="city_filter" promptText="Città"/>
+                        <TextField fx:id="agency_code_filter" promptText="Codice agenzia"/>
+                        <Button mnemonicParsing="false" onAction="#resetFilters" prefHeight="25.0"
+                                prefWidth="203.0" text="Rimuovi filtri"/>
+                    </VBox>
+                </AnchorPane>
+            </right>
+            <center>
+                <AnchorPane prefHeight="644.0" prefWidth="855.0">
+                    <TableView fx:id="table" prefHeight="644.0" prefWidth="806.0" AnchorPane.bottomAnchor="0.0"
+                               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                               BorderPane.alignment="CENTER">
+                        <columns>
+                            <TableColumn fx:id="agency_code_column" editable="false" maxWidth="120.0"
+                                         minWidth="100.0" prefWidth="120.0" resizable="false" text="Codice agenzia"/>
+                            <TableColumn fx:id="city_column" editable="false" maxWidth="250.0" minWidth="100.0"
+                                         prefWidth="120.0" text="Città"/>
+                            <TableColumn fx:id="address_column" editable="false" maxWidth="300.0" minWidth="120.0"
+                                         prefWidth="120.0" text="Indirizzo"/>
+                            <TableColumn fx:id="phone_column" editable="false" maxWidth="150.0" minWidth="120.0"
+                                         prefWidth="120.0" text="Telefono"/>
+                            <TableColumn fx:id="fax_column" editable="false" maxWidth="150.0" minWidth="120.0"
+                                         prefWidth="120.0" resizable="false" text="Fax"/>
+                            <TableColumn fx:id="email_column" maxWidth="300.0" minWidth="150.0" prefWidth="120.0"
+                                         text="Email"/>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
+                    </TableView>
+                    <HBox fx:id="spinnerBox" alignment="CENTER" prefHeight="628.0" prefWidth="806.0"
+                          visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ProgressIndicator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0"
+                                           prefWidth="50.0"/>
+                    </HBox>
+                </AnchorPane>
+            </center>
+            <bottom>
+                <HBox prefHeight="30.0" style="-fx-background-color: f0f0f0;" BorderPane.alignment="CENTER"/>
+            </bottom>
+            <top>
+                <ToolBar BorderPane.alignment="CENTER">
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../../resources/images/department.png"/>
+                    </ImageView>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agenzie" wrappingWidth="100.0">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Text>
+                    <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="728.0"
+                            layoutY="10.0" mnemonicParsing="false" onAction="#gotoDashboard" text="Torna al menu"
+                            textAlignment="CENTER">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../../resources/images/undo.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false"
+                            onAction="#openAddAgency" text="Aggiungi" textAlignment="CENTER">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../../resources/images/add.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="168.0"
+                            layoutY="10.0" mnemonicParsing="false" onAction="#openEditAgency" text="Modifica"
+                            textAlignment="CENTER">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../../resources/images/edit.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="238.0"
+                            layoutY="10.0" mnemonicParsing="false" onAction="#deleteAgency" text="Rimuovi"
+                            textAlignment="CENTER">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../../resources/images/delete.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </ToolBar>
+            </top>
+        </BorderPane>
+    </AnchorPane>
+</VBox>

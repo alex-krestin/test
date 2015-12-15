@@ -1,0 +1,61 @@
+package presentation;
+
+import entity.Response;
+import entity.TransferObject;
+import presentation.helper.EntityCode;
+import presentation.helper.OperationCode;
+import presentation.helper.Request;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Logger;
+
+import static presentation.helper.OperationCode.*;
+
+public class FrontController {
+    private static final Logger log = Logger.getLogger(FrontController.class.getName());
+
+    // Shows view in the same window
+    public static void handleRequest(String view) {
+        ViewDispatcher dispatcher = new ViewDispatcher();
+        dispatcher.showView(view);
+    }
+
+    // Closes previous window and open a new one
+    public static void handleRequest(String view, boolean resizable) {
+        ViewDispatcher dispatcher = new ViewDispatcher();
+        dispatcher.showView(view, resizable);
+    }
+
+    // Opens popup
+    public  static void handleRequest(String view, String title) {
+        ViewDispatcher dispatcher = new ViewDispatcher();
+        dispatcher.openPopupWindow(view, title);
+    }
+
+    public static Response handleRequest(OperationCode operationCode, EntityCode entityCode, TransferObject to) {
+        Request request = sendRequest(operationCode, entityCode);
+
+        //noinspection LawOfDemeter
+        return request != null ? request.execute(to) : new Response(false);
+    }
+
+    private static Request sendRequest(OperationCode operationCode, EntityCode entityCode) {
+        Map<OperationCode, Request> requestMap = getRequestMap(entityCode);
+        return requestMap.get(operationCode);
+    }
+
+    private static Map<OperationCode, Request> getRequestMap(EntityCode entityCode) {
+        Map<OperationCode, Request> requestMap = new HashMap<>();
+        requestMap.put(GET, Request.getRequest(entityCode));
+        requestMap.put(GET_ALL, Request.getAllRequest(entityCode));
+        requestMap.put(ADD, Request.addRequest(entityCode));
+        requestMap.put(UPDATE, Request.updateRequest(entityCode));
+        requestMap.put(DELETE, Request.deleteRequest(entityCode));
+        requestMap.put(CHANGE_STATUS, Request.changeStatusRequest(entityCode));
+        requestMap.put(TEST, Request.testRequest(entityCode));
+
+        return requestMap;
+    }
+
+}

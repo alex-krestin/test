@@ -1,0 +1,24 @@
+package presentation.helper;
+
+
+public enum EntityCode {
+    CONNECTION,
+    USER,
+    AGENCY,
+    CONTRACT,
+    CLIENT,
+    ACCESSORY,
+    ACCESSORY_CATEGORY,
+    SERVICE,
+    PENALTY,
+    PENALTY_CATEGORY,
+    CAR,
+    CAR_CATEGORY,
+    CAR_TARIFF,
+    ACCESSORY_TARIFF,
+    SERVICE_TARIFF,
+    PENALTY_TARIFF,
+    AVAILABLE_CAR,
+    AVAILABLE_ACCESSORY,
+    AVAILABLE_SERVICE
+}

@@ -1,0 +1,20 @@
+.combo-box .list-view .list-cell{
+    -fx-cell-size: 25;
+}
+
+/*noinspection CssInvalidPseudoSelector*/
+.table-row-cell:blocked .table-cell {
+    -fx-text-fill: red;
+}
+
+/*noinspection CssInvalidPseudoSelector*/
+.table-row-cell:blocked:selected .table-cell {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-border-color: transparent lightcoral transparent transparent;
+}
+
+.text-input:disabled {
+    -fx-background-color: #A9A9A9, linear-gradient(from 0px 0px to 0px 5px, derive(#E0E0E2, -9%), #E0E0E2);
+    -fx-opacity: 0.9;
+}
