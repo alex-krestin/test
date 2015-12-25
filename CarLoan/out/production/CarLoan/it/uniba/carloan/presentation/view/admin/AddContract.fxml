@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uniba.carloan.presentation.controller.contracts.AddContractMainController">
+   <children>
+      <TabPane fx:id="fx_tabs" prefHeight="480.0" prefWidth="550.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Auto">
+            <content>
+               <fx:include fx:id="carTab" source="AddContractCarTab.fxml" />
+            </content>
+          </Tab>
+          <Tab text="Cliente">
+            <content>
+                <fx:include fx:id="clientTab" source="AddContractClientTab.fxml" />
+            </content>
+          </Tab>
+            <Tab fx:id="fx_service_tab" text="Servizi">
+               <content>
+                   <fx:include fx:id="serviceTab" source="AddContractServiceTab.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="fx_accessory_tab" text="Accessori">
+               <content>
+                   <fx:include fx:id="accessoryTab" source="AddContractAccessoryTab.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="fx_summary_tab" text="Pagamento">
+               <content>
+                   <fx:include fx:id="summaryTab" source="AddContractSummaryTab.fxml" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+       <HBox layoutX="10.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+          <children>
+              <Button mnemonicParsing="false" onAction="#handleSaveContractAction" prefWidth="90.0" text="Salva" />
+              <Button mnemonicParsing="false" onAction="#closeWindow" prefWidth="90.0" text="Annulla" />
+          </children>
+       </HBox>
+   </children>
+</AnchorPane>
